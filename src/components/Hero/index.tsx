@@ -1,10 +1,10 @@
-import { HeroContainer, Logo, Slogan } from './styles'
+import { HeroContainer, Slogan } from './styles'
 
-import logo from '../../assets/images/logo.png'
+import { Logo } from '../Logo'
 
 const Hero = () => (
   <HeroContainer>
-    <Logo src={logo} alt="EFOOD" />
+    <Logo />
     <Slogan>
       Viva experiências gastronômicas <br /> no conforto da sua casa
     </Slogan>
