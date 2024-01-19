@@ -1,5 +1,3 @@
-import star from '../../assets/images/estrela.svg'
-
 import Button from '../../Button'
 
 import {
@@ -8,7 +6,9 @@ import {
   CardInfo,
   Description,
   Rate,
+  RestaurantImageHighlighted,
   RestaurantImage,
+  Star,
   TagDestaque,
   TagTipo,
   TagsContainer,
@@ -24,47 +24,48 @@ const RestaurantCards = () => (
     </RestaurantImage>
     <CardInfo>
       <CardHeader>
-        <Title>Nome do restaurante</Title>
+        <Title>La Dolce Vita Trattoria</Title>
         <Rate>
           <Title>4.9</Title>
-          <img src={star} alt="Avaliação" />
+          <Star />
         </Rate>
       </CardHeader>
       <Description>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias
-        doloribus cum repellendus voluptatibus commodi neque temporibus vitae
-        repellat fugiat amet assumenda, minus soluta, debitis quos? Fugit odio
-        exercitationem ex velit?
+        A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você!
+        Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo
+        no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor
+        inesquecível. Peça já!
       </Description>
       <Button>Saiba mais</Button>
     </CardInfo>
   </CardContainer>
 )
 
-const RestaurantCardDestaque = () => (
+const RestaurantCardHighlighted = () => (
   <CardContainer>
-    <RestaurantImage>
+    <RestaurantImageHighlighted>
       <TagsContainer>
         <TagDestaque destacado="true">Destaque da semana</TagDestaque>
         <TagTipo>japonesa</TagTipo>
       </TagsContainer>
-    </RestaurantImage>
+    </RestaurantImageHighlighted>
     <CardInfo>
       <CardHeader>
-        <Title>Nome do restaurante</Title>
+        <Title>Hioki Sushi</Title>
         <Rate>
           <Title>4.9</Title>
-          <img src={star} alt="Avaliação" />
+          <Star />
         </Rate>
       </CardHeader>
       <Description>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias
-        doloribus cum repellendus voluptatibus commodi neque temporibus vitae
-        repellat fugiat amet assumenda, minus soluta, debitis quos? Fugit odio
-        exercitationem ex velit?
+        Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis
+        frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega
+        rápida, embalagens cuidadosas e qualidade garantida.
+        <br />
+        Experimente o Japão sem sair do lar com nosso delivery!
       </Description>
       <Button>Saiba mais</Button>
     </CardInfo>
   </CardContainer>
 )
-export { RestaurantCards, RestaurantCardDestaque }
+export { RestaurantCards, RestaurantCardHighlighted }

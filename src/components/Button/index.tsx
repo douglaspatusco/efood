@@ -5,7 +5,7 @@ export type Props = {
 }
 
 const Button = ({ children }: Props) => (
-  <ButtonLink href="#">{children}</ButtonLink>
+  <ButtonLink to="/Perfil">{children}</ButtonLink>
 )
 
 export default Button

@@ -1,14 +1,14 @@
-// import Home from './Pages/Home'
-import Perfil from './Pages/Perfil'
+import { BrowserRouter } from 'react-router-dom'
 
 import { GlobalCss } from './styles'
+import Rotas from './routes'
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <GlobalCss />
-      <Perfil />
-    </>
+      <Rotas />
+    </BrowserRouter>
   )
 }
 
