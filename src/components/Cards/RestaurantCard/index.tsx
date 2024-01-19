@@ -1,6 +1,6 @@
 import star from '../../assets/images/estrela.svg'
 
-import Button from '../Button'
+import Button from '../../Button'
 
 import {
   CardContainer,

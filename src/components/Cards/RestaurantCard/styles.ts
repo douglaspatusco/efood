@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
-import { cores } from '../../styles'
+import { colors } from '../../../styles'
 
 import prato1 from '../../assets/images/prato1.png'
-import { TagStyled } from '../Tags/styles'
+import { TagStyled } from '../../Tags/styles'
 
 type Props = {
   destacado: string
@@ -12,9 +12,8 @@ type Props = {
 export const CardContainer = styled.div`
   max-width: 472px;
   width: 100%;
-  background-color: #fff;
-
-  border: 1px solid ${cores.vermelho};
+  background-color: ${colors.white};
+  border: 1px solid ${colors.salmon};
 
   > img {
     max-width: 100%;

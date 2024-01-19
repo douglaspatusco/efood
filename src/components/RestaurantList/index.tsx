@@ -1,4 +1,7 @@
-import { RestaurantCards, RestaurantCardDestaque } from '../Cards'
+import {
+  RestaurantCards,
+  RestaurantCardDestaque
+} from '../Cards/RestaurantCard'
 
 import { RestaurantsList } from './styles'
 

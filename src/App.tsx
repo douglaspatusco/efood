@@ -1,4 +1,5 @@
-import Home from './components/Home'
+// import Home from './Pages/Home'
+import Perfil from './Pages/Perfil'
 
 import { GlobalCss } from './styles'
 
@@ -6,7 +7,7 @@ function App() {
   return (
     <>
       <GlobalCss />
-      <Home />
+      <Perfil />
     </>
   )
 }

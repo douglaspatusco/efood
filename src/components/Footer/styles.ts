@@ -1,12 +1,12 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { colors } from '../../styles'
 
 export const FooterContainer = styled.footer`
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 40px 0px;
-  background-color: ${cores.bege};
+  background-color: ${colors.antiqueWhite};
 `
 
 export const SocialMedia = styled.div`

@@ -1,12 +1,12 @@
 import styled from 'styled-components'
 
-import { cores } from '../../styles'
+import { colors } from '../../styles'
 
 import { Props } from '.'
 
 export const TagStyled = styled.span<Props>`
-  background-color: ${cores.vermelho};
-  color: ${cores.bege};
+  background-color: ${colors.salmon};
+  color: ${colors.antiqueWhite};
   padding: 6px;
   cursor: pointer;
 `

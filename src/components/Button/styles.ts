@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { colors } from '../../styles'
 
 export const ButtonLink = styled.a`
   padding: 4px 6px;
@@ -7,6 +7,6 @@ export const ButtonLink = styled.a`
   font-weight: 700;
   text-align: center;
   text-decoration: none;
-  background-color: ${cores.vermelho};
-  color: ${cores.bege};
+  background-color: ${colors.salmon};
+  color: ${colors.antiqueWhite};
 `

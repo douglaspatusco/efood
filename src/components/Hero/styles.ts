@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { cores } from '../../styles'
+import { colors } from '../../styles'
 
 import BgFundo from '../../assets/images/garfo-e-faca.png'
 
@@ -14,7 +14,7 @@ export const HeroContainer = styled.div`
   align-items: center;
 
   background-image: url(${BgFundo});
-  background-color: ${cores.bege};
+  background-color: ${colors.antiqueWhite};
 `
 
 export const Slogan = styled.h1`
