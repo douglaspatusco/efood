@@ -2,10 +2,7 @@ import styled from 'styled-components'
 
 import { colors } from '../../../styles'
 
-import prato1 from '../../../assets/images/dish-japanese-1.png'
-import prato2 from '../../../assets/images/dish-italian-1.png'
-import star from '../../../assets/images/rate-star.png'
-
+import prato1 from '../../assets/images/prato1.png'
 import { TagStyled } from '../../Tags/styles'
 
 type Props = {
@@ -23,7 +20,7 @@ export const CardContainer = styled.div`
   }
 `
 
-export const RestaurantImageHighlighted = styled.div`
+export const RestaurantImage = styled.div`
   background-image: url(${prato1});
   position: relative;
   height: 217px;
@@ -31,11 +28,6 @@ export const RestaurantImageHighlighted = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
 `
-
-export const RestaurantImage = styled(RestaurantImageHighlighted)`
-  background-image: url(${prato2});
-`
-
 export const TagsContainer = styled.div`
   position: absolute;
   display: flex;
@@ -74,17 +66,6 @@ export const Title = styled.h3`
   font-weight: bold;
 `
 
-export const Star = styled.div`
-  background-image: url(${star});
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  width: 21px;
-  height: 21px;
-`
-
 export const Description = styled.p`
-  font-size: 14px;
   margin: 16px 0px;
-  line-height: 22px;
 `

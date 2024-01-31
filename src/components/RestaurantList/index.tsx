@@ -1,13 +1,13 @@
 import {
   RestaurantCards,
-  RestaurantCardHighlighted
+  RestaurantCardDestaque
 } from '../Cards/RestaurantCard'
 
 import { RestaurantsList } from './styles'
 
 const Restaurants = () => (
   <RestaurantsList>
-    <RestaurantCardHighlighted />
+    <RestaurantCardDestaque />
     <RestaurantCards />
     <RestaurantCards />
     <RestaurantCards />

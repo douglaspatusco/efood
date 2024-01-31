@@ -1,3 +1,5 @@
 import { Logotipo } from './styles'
 
-export const Logo = () => <Logotipo to="/" />
+import logoimage from '../../assets/images/logo.png'
+
+export const Logo = () => <Logotipo src={logoimage} alt="efood" />

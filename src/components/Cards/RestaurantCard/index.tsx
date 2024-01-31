@@ -1,3 +1,5 @@
+import star from '../../assets/images/estrela.svg'
+
 import Button from '../../Button'
 
 import {
@@ -6,9 +8,7 @@ import {
   CardInfo,
   Description,
   Rate,
-  RestaurantImageHighlighted,
   RestaurantImage,
-  Star,
   TagDestaque,
   TagTipo,
   TagsContainer,
@@ -24,48 +24,47 @@ const RestaurantCards = () => (
     </RestaurantImage>
     <CardInfo>
       <CardHeader>
-        <Title>La Dolce Vita Trattoria</Title>
+        <Title>Nome do restaurante</Title>
         <Rate>
           <Title>4.9</Title>
-          <Star />
+          <img src={star} alt="Avaliação" />
         </Rate>
       </CardHeader>
       <Description>
-        A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você!
-        Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo
-        no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor
-        inesquecível. Peça já!
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias
+        doloribus cum repellendus voluptatibus commodi neque temporibus vitae
+        repellat fugiat amet assumenda, minus soluta, debitis quos? Fugit odio
+        exercitationem ex velit?
       </Description>
       <Button>Saiba mais</Button>
     </CardInfo>
   </CardContainer>
 )
 
-const RestaurantCardHighlighted = () => (
+const RestaurantCardDestaque = () => (
   <CardContainer>
-    <RestaurantImageHighlighted>
+    <RestaurantImage>
       <TagsContainer>
         <TagDestaque destacado="true">Destaque da semana</TagDestaque>
         <TagTipo>japonesa</TagTipo>
       </TagsContainer>
-    </RestaurantImageHighlighted>
+    </RestaurantImage>
     <CardInfo>
       <CardHeader>
-        <Title>Hioki Sushi</Title>
+        <Title>Nome do restaurante</Title>
         <Rate>
           <Title>4.9</Title>
-          <Star />
+          <img src={star} alt="Avaliação" />
         </Rate>
       </CardHeader>
       <Description>
-        Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis
-        frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega
-        rápida, embalagens cuidadosas e qualidade garantida.
-        <br />
-        Experimente o Japão sem sair do lar com nosso delivery!
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias
+        doloribus cum repellendus voluptatibus commodi neque temporibus vitae
+        repellat fugiat amet assumenda, minus soluta, debitis quos? Fugit odio
+        exercitationem ex velit?
       </Description>
       <Button>Saiba mais</Button>
     </CardInfo>
   </CardContainer>
 )
-export { RestaurantCards, RestaurantCardHighlighted }
+export { RestaurantCards, RestaurantCardDestaque }

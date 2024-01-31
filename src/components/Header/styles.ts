@@ -18,7 +18,7 @@ export const Items = styled(DefaultContainer)`
   align-items: center;
 `
 
-export const Links = styled.div`
+export const Links = styled.a`
   color: ${colors.salmon};
   text-align: center;
   font-size: 18px;

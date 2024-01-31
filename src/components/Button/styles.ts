@@ -1,9 +1,7 @@
-import { Link } from 'react-router-dom'
-
 import styled from 'styled-components'
 import { colors } from '../../styles'
 
-export const ButtonLink = styled(Link)`
+export const ButtonLink = styled.a`
   padding: 4px 6px;
   font-size: 14px;
   font-weight: 700;
