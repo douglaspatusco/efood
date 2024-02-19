@@ -1,19 +1,23 @@
-import {
-  RestaurantCards,
-  RestaurantCardHighlighted
-} from '../Cards/RestaurantCard'
+import RestaurantCard from '../Cards/RestaurantCard'
+
+import { Restaurant } from '../../types/api'
 
 import { RestaurantsList } from './styles'
 
-const Restaurants = () => (
-  <RestaurantsList>
-    <RestaurantCardHighlighted />
-    <RestaurantCards />
-    <RestaurantCards />
-    <RestaurantCards />
-    <RestaurantCards />
-    <RestaurantCards />
-  </RestaurantsList>
-)
+type Props = {
+  restaurants: Restaurant[]
+}
 
-export default Restaurants
+const RestaurantList = ({ restaurants }: Props) => {
+  return (
+    <RestaurantsList>
+      {restaurants.map((rest) => (
+        <li key={rest.id}>
+          <RestaurantCard restaurant={rest} />
+        </li>
+      ))}
+    </RestaurantsList>
+  )
+}
+
+export default RestaurantList
