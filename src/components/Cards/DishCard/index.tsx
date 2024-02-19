@@ -1,14 +1,14 @@
-import { AddButton, CardContainer, DishImage } from './styles'
+import { AddButton, CardContainer, Image, Name, Description } from './styles'
 
 const DishCard = () => (
   <CardContainer>
-    <DishImage />
-    <h3>Pizza Marguerita</h3>
-    <p>
+    <Image />
+    <Name>Pizza Marguerita</Name>
+    <Description>
       A clássica Marguerita: molho de tomate suculento, mussarela derretida,
       manjericão fresco e um toque de azeite. Sabor e simplicidade!
-    </p>
-    <AddButton>Adicionar ao carrinho</AddButton>
+    </Description>
+    <AddButton to={`/Home`}>Adicionar ao carrinho</AddButton>
   </CardContainer>
 )
 

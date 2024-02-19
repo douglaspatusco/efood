@@ -14,11 +14,21 @@ export const CardContainer = styled.section`
   color: ${colors.antiqueWhite};
 `
 
-export const DishImage = styled.div`
+export const Image = styled.div`
   background-image: url(${dish1});
   background-repeat: no-repeat;
   background-size: cover;
   height: 168px;
+`
+
+export const Name = styled.h3`
+  font-size: 16px;
+  font-weight: bold;
+`
+
+export const Description = styled.p`
+  font-size: 14px;
+  line-height: 22px;
 `
 
 export const AddButton = styled(ButtonLink)`
