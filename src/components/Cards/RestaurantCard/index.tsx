@@ -1,4 +1,5 @@
 import { Restaurant } from '../../../types/api'
+import { useParams } from 'react-router-dom'
 
 import Button from '../../Button'
 
@@ -21,6 +22,7 @@ export type Props = {
 
 const RestaurantCard = ({ restaurant }: Props) => {
   const { titulo, destacado, tipo, avaliacao, descricao, capa } = restaurant
+  const { id } = useParams()
 
   const getDescricao = (descricao: string) => {
     if (descricao.length > 192) {
@@ -49,7 +51,7 @@ const RestaurantCard = ({ restaurant }: Props) => {
           </Rate>
         </CardHeader>
         <Description>{getDescricao(descricao)}</Description>
-        <Button>Saiba mais</Button>
+        <Button to={`/profile/${restaurant.id}`}>Saiba mais</Button>
       </CardInfo>
     </CardContainer>
   )

@@ -1,14 +1,12 @@
-import { useParams } from 'react-router-dom'
-
 import { ButtonLink } from './styles'
 
 export type Props = {
+  to?: string
   children?: string
 }
 
-const Button = ({ children }: Props) => {
-  const { id } = useParams()
-  return <ButtonLink to={`/profile/${id}`}>{children}</ButtonLink>
+const Button = ({ to, children }: Props) => {
+  return <ButtonLink to={to as string}>{children}</ButtonLink>
 }
 
 export default Button

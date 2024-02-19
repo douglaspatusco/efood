@@ -20,7 +20,7 @@ const DishCard = ({ dish }: Props) => {
       <Image style={{ backgroundImage: `url(${dish.foto})` }} />
       <Name>{dish.nome}</Name>
       <Description>{getDescricao(dish.descricao)}</Description>
-      <AddButton to={`/Home`}>Adicionar ao carrinho</AddButton>
+      <AddButton to={`/`}>Adicionar ao carrinho</AddButton>
     </CardContainer>
   )
 }
