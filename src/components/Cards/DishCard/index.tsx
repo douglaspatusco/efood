@@ -11,7 +11,6 @@ import {
   Overlay
 } from './styles'
 
-import imagem from '../../../assets/images/dish-italian-1.png'
 import close from '../../../assets/images/close.png'
 import { useState } from 'react'
 
