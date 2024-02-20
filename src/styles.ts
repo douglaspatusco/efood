@@ -2,6 +2,7 @@ import styled, { createGlobalStyle } from 'styled-components'
 
 export const colors = {
   salmon: '#E66767',
+  pureWhire: '#fff',
   white: '#FFF8F2',
   antiqueWhite: '#FFEBD9',
   salmaoOpaco: '#E667670D'
@@ -13,6 +14,7 @@ export const GlobalCss = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     font-family: Roboto, sans-serif;
+    list-style: none;
   }
 
   body {

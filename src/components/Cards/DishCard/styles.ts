@@ -2,7 +2,6 @@ import styled from 'styled-components'
 import { colors } from '../../../styles'
 
 import dish1 from '../../../assets/images/dish1.png'
-import { ButtonLink } from '../../Button/styles'
 
 export const CardContainer = styled.section`
   width: 320px;
@@ -12,6 +11,14 @@ export const CardContainer = styled.section`
   flex-direction: column;
   background-color: ${colors.salmon};
   color: ${colors.antiqueWhite};
+
+  position: relative;
+
+  > img {
+    width: 100%;
+    height: 167px;
+    object-fit: cover;
+  }
 `
 
 export const Image = styled.div`
@@ -31,7 +38,94 @@ export const Description = styled.p`
   line-height: 22px;
 `
 
-export const AddButton = styled(ButtonLink)`
+export const AddButton = styled.div`
+  padding: 4px 6px;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
   background-color: ${colors.antiqueWhite};
   color: ${colors.salmon};
+  cursor: pointer;
+`
+
+export const Modal = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  &.visible {
+    display: flex;
+  }
+`
+
+export const Overlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+`
+
+export const ModalContent = styled.div`
+  max-width: 960px;
+  height: 344px;
+  position: relative;
+  z-index: 1;
+  color: ${colors.white};
+  background-color: ${colors.salmon};
+
+  header {
+    display: flex;
+    justify-content: flex-end;
+
+    img {
+      margin: 8px;
+      cursor: pointer;
+    }
+  }
+
+  main {
+    display: flex;
+    padding: 0 32px;
+
+    img {
+      height: 280px;
+      width: 280px;
+      object-fit: cover;
+      margin-right: 24px;
+    }
+
+    h3 {
+      font-size: 18px;
+      margin-bottom: 16px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 22px;
+    }
+
+    span {
+      display: block;
+      font-size: 14px;
+      margin: 16px 0;
+    }
+
+    button {
+      background-color: ${colors.antiqueWhite};
+      padding: 4px 8px;
+      font-size: 14px;
+      border: none;
+      color: ${colors.salmon};
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
 `

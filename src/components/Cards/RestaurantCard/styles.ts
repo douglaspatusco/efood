@@ -8,15 +8,9 @@ import star from '../../../assets/images/rate-star.png'
 
 import { TagStyled } from '../../Tags/styles'
 
-type Props = {
-  destacado: string
-}
-
 export const CardContainer = styled.div`
   max-width: 472px;
   width: 100%;
-  background-color: ${colors.white};
-  border: 1px solid ${colors.salmon};
 
   > img {
     max-width: 100%;
@@ -42,21 +36,22 @@ export const TagsContainer = styled.div`
   justify-content: flex-end;
   right: 16px;
   top: 16px;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: bold;
 `
 
-export const TagTipo = styled(TagStyled)`
+export const Tag = styled(TagStyled)`
   font-size: 12px;
   cursor: initial;
-`
-
-export const TagDestaque = styled(TagTipo)<Props>`
-  display: ${(props) => (props.destacado === 'true' ? 'initial' : 'none')};
-  margin-right: 8px;
 `
 
 export const CardInfo = styled.div`
   padding: 8px;
   width: 472px;
+
+  background-color: ${colors.pureWhire};
+  border: 1px solid ${colors.salmon};
 `
 
 export const CardHeader = styled.div`
