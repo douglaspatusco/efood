@@ -63,7 +63,7 @@ const DishCard = ({ dish }: Props) => {
             <div>
               <h3>{dish.nome}</h3>
               <p>{dish.descricao}</p>
-              <span>{`Serve: de${dish.porcao}`}</span>
+              <span>{`Serve: de ${dish.porcao}`}</span>
               <button>Adicionar ao carrinho - {formatPrice(dish.preco)}</button>
             </div>
           </main>
