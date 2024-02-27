@@ -8,6 +8,7 @@ export const CoverContainer = styled(DefaultContainer)`
   height: 280px;
   flex-direction: column;
   justify-content: space-between;
+  z-index: 1;
 `
 
 export const CoverImage = styled.div`
