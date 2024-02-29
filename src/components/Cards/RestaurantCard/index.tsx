@@ -1,4 +1,4 @@
-import { Restaurant } from '../../../types/api'
+import { Restaurant } from '../../../types/types'
 
 import Button from '../../Button'
 

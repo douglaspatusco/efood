@@ -1,7 +1,6 @@
-import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
-import { Restaurant } from '../../types/api'
+import { useGetRestaurantQuery } from '../../services/api'
 
 import {
   CoverImage,
@@ -12,21 +11,13 @@ import {
 
 const Cover = () => {
   const { id } = useParams()
-  const [restaurant, setRestaurant] = useState<Restaurant>()
-
-  useEffect(() => {
-    fetch(`https://fake-api-tau.vercel.app/api/efood/restaurantes/${id}`)
-      .then((res) => res.json())
-      .then((res) => {
-        setRestaurant(res)
-      })
-  }, [id])
+  const { data: restaurante } = useGetRestaurantQuery(id!)
 
   return (
-    <CoverImage style={{ backgroundImage: `url(${restaurant?.capa})` }}>
+    <CoverImage style={{ backgroundImage: `url(${restaurante?.capa})` }}>
       <CoverContainer>
-        <Especialty>{restaurant?.tipo}</Especialty>
-        <RestaurantName>{restaurant?.titulo}</RestaurantName>
+        <Especialty>{restaurante?.tipo}</Especialty>
+        <RestaurantName>{restaurante?.titulo}</RestaurantName>
       </CoverContainer>
     </CoverImage>
   )
