@@ -1,8 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { Menu } from '../../types/api'
+import { Restaurant } from '../../types/types'
 
 type CartState = {
-  items: Menu[]
+  items: Restaurant[]
 }
 
 const initialState: CartState = {
@@ -13,7 +13,7 @@ const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
-    add: (state, action: PayloadAction<Menu>) => {
+    add: (state, action: PayloadAction<Restaurant>) => {
       state.items.push(action.payload)
     }
   }

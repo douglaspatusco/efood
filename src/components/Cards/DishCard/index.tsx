@@ -1,4 +1,4 @@
-import { Menu } from '../../../types/api'
+import { Menu } from '../../../types/types'
 
 import {
   AddButton,
