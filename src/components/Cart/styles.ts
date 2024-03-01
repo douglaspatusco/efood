@@ -2,8 +2,6 @@ import styled from 'styled-components'
 import { colors } from '../../styles'
 import { ButtonLink } from '../Button/styles'
 
-import imagemDeletar from '../../assets/images/lixeira.png'
-
 export const Overlay = styled.div`
   position: absolute;
   top: 0;
