@@ -2,39 +2,50 @@ import Button from '../Button'
 import { Overlay } from '../Cards/DishCard/styles'
 import { CartContainer, CartItem, Sidebar, TotalPrice } from './styles'
 
-import imagemTeste from '../../assets/images/dish-italian-1.png'
 import imagemDeletar from '../../assets/images/lixeira.png'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootReducer } from '../../store'
+import { close, remove } from '../../store/reducers/cart'
+import { formatPrice } from '../Cards/DishCard'
 
 const Cart = () => {
+  const { isOpen, items } = useSelector((state: RootReducer) => state.cart)
+
+  const dispatch = useDispatch()
+
+  const closeCart = () => {
+    dispatch(close())
+  }
+
+  const removeItem = (id: number) => {
+    dispatch(remove(id))
+  }
+
+  const getTotalPrice = () => {
+    return items.reduce((acumulador, valorAtual) => {
+      return (acumulador += valorAtual.preco!)
+    }, 0)
+  }
+
   return (
-    <CartContainer>
-      <Overlay />
+    <CartContainer className={isOpen ? 'is-open' : ''}>
+      <Overlay onClick={closeCart} />
       <Sidebar>
         <ul>
-          <li>
-            <CartItem>
-              <img src={imagemTeste} />
+          {items.map((item) => (
+            <CartItem key={item.id}>
+              <img src={item.foto} alt={item.nome} />
               <div>
-                <h3>Pizza Marguerita</h3>
-                <p>R$60,90</p>
+                <h3>{item.nome}</h3>
+                <p>{formatPrice(item.preco)}</p>
               </div>
-              <img src={imagemDeletar} />
+              <img onClick={() => removeItem(item.id)} src={imagemDeletar} />
             </CartItem>
-          </li>
-          <li>
-            <CartItem>
-              <img src={imagemTeste} />
-              <div>
-                <h3>Pizza Marguerita</h3>
-                <p>R$60,90</p>
-              </div>
-              <img src={imagemDeletar} />
-            </CartItem>
-          </li>
+          ))}
         </ul>
         <TotalPrice>
           <p>Valor total</p>
-          <p>R$ 182,70</p>
+          <p>{formatPrice(getTotalPrice())}</p>
         </TotalPrice>
         <Button>Continuar com a entrega</Button>
       </Sidebar>

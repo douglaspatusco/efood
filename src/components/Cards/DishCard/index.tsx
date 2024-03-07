@@ -13,15 +13,31 @@ import {
 
 import close from '../../../assets/images/close.png'
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { add, open } from '../../../store/reducers/cart'
 
 export type Props = {
   dish: Menu
 }
 
+export const formatPrice = (price: number) => {
+  return new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL'
+  }).format(price)
+}
+
 const DishCard = ({ dish }: Props) => {
+  const dispatch = useDispatch()
+
   const [modal, setModal] = useState({
     isVisible: false
   })
+
+  const addToCart = () => {
+    dispatch(add(dish))
+    dispatch(open())
+  }
 
   const closeModal = () => {
     setModal({ isVisible: false })
@@ -33,13 +49,6 @@ const DishCard = ({ dish }: Props) => {
     }
     console.log(descricao)
     return descricao
-  }
-
-  const formatPrice = (price: number) => {
-    return new Intl.NumberFormat('pt-BR', {
-      style: 'currency',
-      currency: 'BRL'
-    }).format(price)
   }
 
   return (
@@ -64,7 +73,14 @@ const DishCard = ({ dish }: Props) => {
               <h3>{dish.nome}</h3>
               <p>{dish.descricao}</p>
               <span>{`Serve: de ${dish.porcao}`}</span>
-              <button>Adicionar ao carrinho - {formatPrice(dish.preco)}</button>
+              <button
+                onClick={() => {
+                  addToCart()
+                  closeModal()
+                }}
+              >
+                Adicionar ao carrinho - {formatPrice(dish.preco)}
+              </button>
             </div>
           </main>
         </ModalContent>
