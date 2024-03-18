@@ -90,3 +90,15 @@ export const TotalPrice = styled.div`
   line-height: 16.41px;
   font-size: 14px;
 `
+
+export const PaymentButton = styled.button`
+  border: none;
+  background-color: ${colors.antiqueWhite};
+  color: ${colors.salmon};
+  font-size: 14px;
+  font-weight: bold;
+  padding: 4px;
+  width: 100%;
+  cursor: pointer;
+  margin-bottom: 8px;
+`
