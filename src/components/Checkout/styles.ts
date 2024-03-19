@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { colors } from '../../styles'
 
-export const Container = styled.div`
+export const Container = styled.form`
   h3 {
     color: ${colors.antiqueWhite};
     margin-bottom: 16px;
