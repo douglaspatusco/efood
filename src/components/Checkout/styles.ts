@@ -36,6 +36,11 @@ export const InputGroup = styled.div`
     font-size: 14px;
     font-weight: bold;
   }
+
+  small {
+    color: ${colors.pureWhire};
+    margin-bottom: 8px;
+  }
 `
 
 export const ButtonEntrega = styled.button`

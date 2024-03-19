@@ -39,7 +39,13 @@ const Checkout = ({ setPayment }: { setPayment: (value: boolean) => void }) => {
     }
   })
 
-  console.log(form)
+  const getErrorMessage = (fieldName: string, message?: string) => {
+    const isTouched = fieldName in form.touched
+    const isInvalid = fieldName in form.errors
+
+    if (isTouched && isInvalid) return message
+    return ''
+  }
 
   return (
     <Container onSubmit={form.handleSubmit}>
@@ -54,6 +60,9 @@ const Checkout = ({ setPayment }: { setPayment: (value: boolean) => void }) => {
           onChange={form.handleChange}
           onBlur={form.handleBlur}
         />
+        <small>
+          {getErrorMessage('nomeCompleto', form.errors.nomeCompleto)}
+        </small>
       </InputGroup>
       <InputGroup>
         <label htmlFor="endereco">Endereço</label>
@@ -65,6 +74,7 @@ const Checkout = ({ setPayment }: { setPayment: (value: boolean) => void }) => {
           onChange={form.handleChange}
           onBlur={form.handleBlur}
         />
+        <small>{getErrorMessage('endereco', form.errors.endereco)}</small>
       </InputGroup>
       <InputGroup>
         <label htmlFor="cidade">Cidade</label>
@@ -76,6 +86,7 @@ const Checkout = ({ setPayment }: { setPayment: (value: boolean) => void }) => {
           onChange={form.handleChange}
           onBlur={form.handleBlur}
         />
+        <small>{getErrorMessage('cidade', form.errors.cidade)}</small>
       </InputGroup>
       <div className="spaceBetween">
         <InputGroup>
@@ -88,6 +99,7 @@ const Checkout = ({ setPayment }: { setPayment: (value: boolean) => void }) => {
             onChange={form.handleChange}
             onBlur={form.handleBlur}
           />
+          <small>{getErrorMessage('cep', form.errors.cep)}</small>
         </InputGroup>
         <InputGroup>
           <label htmlFor="numeroDaCasa">Número</label>
@@ -99,6 +111,9 @@ const Checkout = ({ setPayment }: { setPayment: (value: boolean) => void }) => {
             onChange={form.handleChange}
             onBlur={form.handleBlur}
           />
+          <small>
+            {getErrorMessage('numeroDaCasa', form.errors.numeroDaCasa)}
+          </small>
         </InputGroup>
       </div>
       <InputGroup>
