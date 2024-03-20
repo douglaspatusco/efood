@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { DefaultContainer, colors } from '../../styles'
+import { DefaultContainer, breakpoints, colors } from '../../styles'
 
 export const CoverContainer = styled(DefaultContainer)`
   position: relative;
@@ -9,6 +9,14 @@ export const CoverContainer = styled(DefaultContainer)`
   flex-direction: column;
   justify-content: space-between;
   z-index: 1;
+
+  @media (max-width: ${breakpoints.desktop}) {
+    width: 95%;
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    width: 95%;
+  }
 `
 
 export const CoverImage = styled.div`

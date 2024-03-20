@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { colors } from '../../../styles'
+import { breakpoints, colors } from '../../../styles'
 
 import dish1 from '../../../assets/images/dish1.png'
 
@@ -126,6 +126,39 @@ export const ModalContent = styled.div`
       color: ${colors.salmon};
       font-weight: bold;
       cursor: pointer;
+    }
+
+    @media (max-width: ${breakpoints.tablet}) {
+      display: flex;
+      flex-direction: column;
+    }
+
+    @media (max-width: ${breakpoints.desktop}) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  @media (max-width: ${breakpoints.desktop}) {
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 16px;
+
+    main {
+      div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h3 {
+          margin-top: 16px;
+        }
+      }
+      img {
+        margin-right: 0;
+      }
     }
   }
 `

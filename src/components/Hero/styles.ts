@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { colors } from '../../styles'
+import { breakpoints, colors } from '../../styles'
 
 import BgFundo from '../../assets/images/garfo-e-faca.png'
 
@@ -15,6 +15,14 @@ export const HeroContainer = styled.div`
 
   background-image: url(${BgFundo});
   background-color: ${colors.antiqueWhite};
+
+  @media (max-width: ${breakpoints.desktop}) {
+    height: 300px;
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    height: 300px;
+  }
 `
 
 export const Slogan = styled.h1`

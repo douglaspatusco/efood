@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { DefaultContainer, colors } from '../../styles'
+import { DefaultContainer, breakpoints, colors } from '../../styles'
 
 import BgFundo from '../../assets/images/garfo-e-faca.png'
 
@@ -16,6 +16,17 @@ export const Items = styled(DefaultContainer)`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: ${breakpoints.desktop}) {
+    width: 95%;
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    width: 95%;
+    height: 250px;
+    flex-direction: column;
+    column-gap: 16px;
+  }
 `
 
 export const Links = styled.div`
