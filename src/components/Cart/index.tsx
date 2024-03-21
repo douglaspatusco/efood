@@ -14,6 +14,13 @@ import { close, remove } from '../../store/reducers/cart'
 import { formatPrice } from '../Cards/DishCard'
 import { useState } from 'react'
 import Checkout from '../Checkout'
+import { Menu } from '../../types/types'
+
+export const getTotalPrice = (items: Menu[]) => {
+  return items.reduce((acumulador, valorAtual) => {
+    return (acumulador += valorAtual.preco!)
+  }, 0)
+}
 
 const Cart = () => {
   const { isOpen, items } = useSelector((state: RootReducer) => state.cart)
@@ -27,12 +34,6 @@ const Cart = () => {
 
   const removeItem = (id: number) => {
     dispatch(remove(id))
-  }
-
-  const getTotalPrice = () => {
-    return items.reduce((acumulador, valorAtual) => {
-      return (acumulador += valorAtual.preco!)
-    }, 0)
   }
 
   return (
@@ -58,14 +59,14 @@ const Cart = () => {
             </ul>
             <TotalPrice>
               <p>Valor total</p>
-              <p>{formatPrice(getTotalPrice())}</p>
+              <p>{formatPrice(getTotalPrice(items))}</p>
             </TotalPrice>
             <PaymentButton onClick={() => setPayment(true)}>
               Continuar com a entrega
             </PaymentButton>
           </>
         ) : (
-          <Checkout setPayment={setPayment} />
+          <Checkout />
         )}
       </Sidebar>
     </CartContainer>

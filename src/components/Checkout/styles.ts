@@ -27,6 +27,12 @@ export const Container = styled.form`
     border: 1px solid ${colors.antiqueWhite};
     background-color: ${colors.antiqueWhite};
   }
+
+  p {
+    color: ${colors.antiqueWhite};
+    font-size: 14px;
+    line-height: 22px;
+  }
 `
 
 export const InputGroup = styled.div`
