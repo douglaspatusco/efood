@@ -1,7 +1,5 @@
 import DishCard from '../Cards/DishCard'
 
-import { Menu } from '../../types/types'
-
 import { DishList } from './styles'
 
 type Props = {

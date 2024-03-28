@@ -1,26 +1,15 @@
-import { Overlay } from '../Cards/DishCard/styles'
-import {
-  CartContainer,
-  CartItem,
-  PaymentButton,
-  Sidebar,
-  TotalPrice
-} from './styles'
-
-import imagemDeletar from '../../assets/images/lixeira.png'
+import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootReducer } from '../../store'
-import { close, remove } from '../../store/reducers/cart'
-import { formatPrice } from '../Cards/DishCard'
-import { useState } from 'react'
-import Checkout from '../Checkout'
-import { Menu } from '../../types/types'
 
-export const getTotalPrice = (items: Menu[]) => {
-  return items.reduce((acumulador, valorAtual) => {
-    return (acumulador += valorAtual.preco!)
-  }, 0)
-}
+import { close, remove } from '../../store/reducers/cart'
+import { getTotalPrice, parseToBrl } from '../../utils'
+import Checkout from '../Checkout'
+
+import imagemDeletar from '../../assets/images/lixeira.png'
+
+import { Overlay } from '../Cards/DishCard/styles'
+import * as S from './styles'
 
 const Cart = () => {
   const { isOpen, items } = useSelector((state: RootReducer) => state.cart)
@@ -37,39 +26,42 @@ const Cart = () => {
   }
 
   return (
-    <CartContainer className={isOpen ? 'is-open' : ''}>
+    <S.CartContainer className={isOpen ? 'is-open' : ''}>
       <Overlay onClick={closeCart} />
-      <Sidebar>
+      <S.Sidebar>
         {!payment ? (
           <>
             <ul>
               {items.map((item) => (
-                <CartItem key={item.id}>
+                <S.CartItem key={item.id}>
                   <img src={item.foto} alt={item.nome} />
                   <div>
                     <h3>{item.nome}</h3>
-                    <p>{formatPrice(item.preco)}</p>
+                    <p>{parseToBrl(item.preco)}</p>
                   </div>
                   <img
                     onClick={() => removeItem(item.id)}
                     src={imagemDeletar}
                   />
-                </CartItem>
+                </S.CartItem>
               ))}
             </ul>
-            <TotalPrice>
+            <S.TotalPrice>
               <p>Valor total</p>
-              <p>{formatPrice(getTotalPrice(items))}</p>
-            </TotalPrice>
-            <PaymentButton onClick={() => setPayment(true)}>
+              <p>{parseToBrl(getTotalPrice(items))}</p>
+            </S.TotalPrice>
+            <S.PaymentButton
+              title="Prosseguir para a entrega "
+              onClick={() => setPayment(true)}
+            >
               Continuar com a entrega
-            </PaymentButton>
+            </S.PaymentButton>
           </>
         ) : (
           <Checkout />
         )}
-      </Sidebar>
-    </CartContainer>
+      </S.Sidebar>
+    </S.CartContainer>
   )
 }
 

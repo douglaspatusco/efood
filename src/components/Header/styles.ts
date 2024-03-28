@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 import { DefaultContainer, breakpoints, colors } from '../../styles'
 
@@ -29,10 +30,19 @@ export const Items = styled(DefaultContainer)`
   }
 `
 
-export const Links = styled.div`
+export const Cart = styled.div`
   color: ${colors.salmon};
   text-align: center;
   font-size: 18px;
   font-weight: bold;
   cursor: pointer;
+`
+
+export const Links = styled(Link)`
+  color: ${colors.salmon};
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
 `

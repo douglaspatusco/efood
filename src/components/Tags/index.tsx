@@ -1,7 +1,5 @@
 import { TagStyled } from './styles'
 
-import { Restaurant } from '../../types/types'
-
 export type RestaurantProps = {
   restaurant: Restaurant
 }

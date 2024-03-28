@@ -1,7 +1,5 @@
 import RestaurantCard from '../Cards/RestaurantCard'
 
-import { Restaurant } from '../../types/types'
-
 import { RestaurantsList } from './styles'
 
 type Props = {

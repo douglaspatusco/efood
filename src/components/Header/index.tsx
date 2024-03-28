@@ -1,9 +1,11 @@
+import { useDispatch, useSelector } from 'react-redux'
+
 import { Logo } from '../Logo'
-import { Background, Items, Links } from './styles'
 
 import { open } from '../../store/reducers/cart'
-import { useDispatch, useSelector } from 'react-redux'
 import { RootReducer } from '../../store'
+
+import * as S from './styles'
 
 const Header = () => {
   const dispatch = useDispatch()
@@ -14,13 +16,15 @@ const Header = () => {
   }
 
   return (
-    <Background>
-      <Items>
-        <Links>Restaurantes</Links>
+    <S.Background>
+      <S.Items>
+        <S.Links to="/">Restaurantes</S.Links>
         <Logo />
-        <Links onClick={openCart}>{items.length} produto(s) no carrinho</Links>
-      </Items>
-    </Background>
+        <S.Cart onClick={openCart}>
+          {items.length} produto(s) no carrinho
+        </S.Cart>
+      </S.Items>
+    </S.Background>
   )
 }
 export default Header

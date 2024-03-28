@@ -1,30 +1,14 @@
-import { Menu } from '../../../types/types'
-
-import {
-  AddButton,
-  CardContainer,
-  Image,
-  Name,
-  Description,
-  Modal,
-  ModalContent,
-  Overlay
-} from './styles'
-
-import close from '../../../assets/images/close.png'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
+
+import close from '../../../assets/images/close.png'
 import { add, open } from '../../../store/reducers/cart'
+
+import * as S from './styles'
+import { parseToBrl } from '../../../utils'
 
 export type Props = {
   dish: Menu
-}
-
-export const formatPrice = (price: number) => {
-  return new Intl.NumberFormat('pt-BR', {
-    style: 'currency',
-    currency: 'BRL'
-  }).format(price)
 }
 
 const DishCard = ({ dish }: Props) => {
@@ -53,39 +37,46 @@ const DishCard = ({ dish }: Props) => {
 
   return (
     <>
-      <CardContainer>
-        <Image style={{ backgroundImage: `url(${dish.foto})` }} />
-        <Name>{dish.nome}</Name>
-        <Description>{getDescricao(dish.descricao)}</Description>
-        <AddButton onClick={() => setModal({ isVisible: true })}>
+      <S.CardContainer>
+        <S.Image
+          title={dish.nome}
+          style={{ backgroundImage: `url(${dish.foto})` }}
+        />
+        <S.Name>{dish.nome}</S.Name>
+        <S.Description>{getDescricao(dish.descricao)}</S.Description>
+        <S.AddButton
+          title={`Clique aqui para adicionar o prato ${dish.nome} ao carrinho`}
+          onClick={() => setModal({ isVisible: true })}
+        >
           Adicionar ao carrinho
-        </AddButton>
-      </CardContainer>
+        </S.AddButton>
+      </S.CardContainer>
 
-      <Modal className={modal.isVisible ? 'visible' : ''}>
-        <ModalContent className="container">
+      <S.Modal className={modal.isVisible ? 'visible' : ''}>
+        <S.ModalContent className="container">
           <header>
             <img src={close} alt="fechar modal" onClick={closeModal} />
           </header>
           <main>
-            <img src={dish.foto} />
+            <img title={dish.nome} src={dish.foto} />
             <div>
               <h3>{dish.nome}</h3>
               <p>{dish.descricao}</p>
               <span>{`Serve: de ${dish.porcao}`}</span>
               <button
+                title={'Clique para confirmar'}
                 onClick={() => {
                   addToCart()
                   closeModal()
                 }}
               >
-                Adicionar ao carrinho - {formatPrice(dish.preco)}
+                Adicionar ao carrinho - {parseToBrl(dish.preco)}
               </button>
             </div>
           </main>
-        </ModalContent>
-        <Overlay onClick={closeModal}></Overlay>
-      </Modal>
+        </S.ModalContent>
+        <S.Overlay onClick={closeModal}></S.Overlay>
+      </S.Modal>
     </>
   )
 }

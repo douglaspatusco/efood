@@ -1,19 +1,6 @@
-import { Restaurant } from '../../../types/types'
-
 import Button from '../../Button'
 
-import {
-  CardContainer,
-  CardHeader,
-  CardInfo,
-  Description,
-  Rate,
-  RestaurantImage,
-  Star,
-  Tag,
-  TagsContainer,
-  Title
-} from './styles'
+import * as S from './styles'
 
 export type Props = {
   restaurant: Restaurant
@@ -31,27 +18,32 @@ const RestaurantCard = ({ restaurant }: Props) => {
   }
 
   return (
-    <CardContainer>
-      <RestaurantImage style={{ backgroundImage: `url(${capa})` }}>
-        <TagsContainer>
+    <S.CardContainer>
+      <S.RestaurantImage style={{ backgroundImage: `url(${capa})` }}>
+        <S.TagsContainer>
           {destacado === true ? (
-            <Tag destacado={destacado}>Destaque da Semana</Tag>
+            <S.Tag destacado={destacado}>Destaque da Semana</S.Tag>
           ) : null}
-          <Tag>{tipo}</Tag>
-        </TagsContainer>
-      </RestaurantImage>
-      <CardInfo>
-        <CardHeader>
-          <Title>{titulo}</Title>
-          <Rate>
-            <Title>{avaliacao}</Title>
-            <Star />
-          </Rate>
-        </CardHeader>
-        <Description>{getDescricao(descricao)}</Description>
-        <Button to={`/profile/${restaurant.id}`}>Saiba mais</Button>
-      </CardInfo>
-    </CardContainer>
+          <S.Tag>{tipo}</S.Tag>
+        </S.TagsContainer>
+      </S.RestaurantImage>
+      <S.CardInfo>
+        <S.CardHeader>
+          <S.Title>{titulo}</S.Title>
+          <S.Rate>
+            <S.Title>{avaliacao}</S.Title>
+            <S.Star />
+          </S.Rate>
+        </S.CardHeader>
+        <S.Description>{getDescricao(descricao)}</S.Description>
+        <Button
+          title={`Clique aqui para ver o cardápio do restaurante ${titulo}`}
+          to={`/profile/${restaurant.id}`}
+        >
+          Saiba mais
+        </Button>
+      </S.CardInfo>
+    </S.CardContainer>
   )
 }
 

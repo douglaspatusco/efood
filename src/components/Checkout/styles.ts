@@ -49,7 +49,7 @@ export const InputGroup = styled.div`
   }
 `
 
-export const ButtonEntrega = styled.button`
+export const Button = styled.button`
   border: none;
   background-color: ${colors.antiqueWhite};
   color: ${colors.salmon};

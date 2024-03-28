@@ -1,0 +1,12 @@
+export const parseToBrl = (amount: number) => {
+  return new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL'
+  }).format(amount)
+}
+
+export const getTotalPrice = (items: Menu[]) => {
+  return items.reduce((accumulator, currentPrice) => {
+    return (accumulator += currentPrice.preco!)
+  }, 0)
+}

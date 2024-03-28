@@ -13,6 +13,10 @@ export const SocialMedia = styled.div`
   margin: 32px 0px 80px 0px;
   display: flex;
   gap: 8px;
+
+  img {
+    cursor: pointer;
+  }
 `
 
 export const Span = styled.span`
