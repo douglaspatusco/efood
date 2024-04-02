@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 
 import close from '../../../assets/images/close.png'
-import { add, open } from '../../../store/reducers/cart'
+import { add, openCart } from '../../../store/reducers/cart'
 
 import * as S from './styles'
 import { parseToBrl } from '../../../utils'
@@ -20,7 +20,7 @@ const DishCard = ({ dish }: Props) => {
 
   const addToCart = () => {
     dispatch(add(dish))
-    dispatch(open())
+    dispatch(openCart())
   }
 
   const closeModal = () => {

@@ -7,6 +7,9 @@ export const parseToBrl = (amount: number) => {
 
 export const getTotalPrice = (items: Menu[]) => {
   return items.reduce((accumulator, currentPrice) => {
-    return (accumulator += currentPrice.preco!)
+    if (currentPrice.preco) {
+      return (accumulator += currentPrice.preco)
+    }
+    return 0
   }, 0)
 }

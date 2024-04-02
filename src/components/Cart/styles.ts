@@ -31,18 +31,32 @@ export const Sidebar = styled.aside`
   }
 `
 
-export const CartContainer = styled.div`
+export const Container = styled.div`
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  display: none;
   justify-content: flex-end;
   z-index: 1;
 
   &.is-open {
     display: flex;
+  }
+`
+
+export const Cart = styled.div`
+  .empty-cart-warning {
+    color: ${colors.antiqueWhite};
+  }
+
+  &.invisible {
+    display: none;
+  }
+
+  &.visible {
+    display: block;
   }
 `
 

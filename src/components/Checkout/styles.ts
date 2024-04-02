@@ -26,6 +26,10 @@ export const Container = styled.form`
     margin: 8px 0;
     border: 1px solid ${colors.antiqueWhite};
     background-color: ${colors.antiqueWhite};
+
+    &.error {
+      border: 1px solid red;
+    }
   }
 
   p {

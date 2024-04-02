@@ -1,12 +1,12 @@
 import { useParams } from 'react-router-dom'
 
-import { useGetRestaurantQuery } from '../../services/api'
+import { useGetMenuQuery } from '../../services/api'
 
 import * as S from './styles'
 
 const Cover = () => {
   const { id } = useParams()
-  const { data: restaurante } = useGetRestaurantQuery(id!)
+  const { data: restaurante } = useGetMenuQuery(id!)
 
   return (
     <S.CoverImage style={{ backgroundImage: `url(${restaurante?.capa})` }}>
