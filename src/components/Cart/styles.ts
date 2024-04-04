@@ -51,12 +51,8 @@ export const Cart = styled.div`
     color: ${colors.antiqueWhite};
   }
 
-  &.invisible {
+  .none {
     display: none;
-  }
-
-  &.visible {
-    display: block;
   }
 `
 

@@ -58,14 +58,14 @@ const Cart = () => {
                 <p>{parseToBrl(getTotalPrice(items))}</p>
               </S.TotalPrice>
               <S.PaymentButton
-                title="Prosseguir para a entrega "
+                title="Prosseguir para a entrega"
                 onClick={openCheck}
               >
                 Continuar com a entrega
               </S.PaymentButton>
             </>
           ) : (
-            <p className={!isCheckoutOpen ? 'empty-cart-warning' : ''}>
+            <p className={!isCheckoutOpen ? 'empty-cart-warning' : 'none'}>
               Seu carrinho está vazio
             </p>
           )}
