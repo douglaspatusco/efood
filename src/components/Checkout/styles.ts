@@ -2,21 +2,23 @@ import styled from 'styled-components'
 import { colors } from '../../styles'
 
 export const Container = styled.form`
+  margin-top: 32px;
   h3 {
     color: ${colors.antiqueWhite};
     margin-bottom: 16px;
     font-size: 16px;
   }
 
-  .spaceBetween {
+  .space-between {
     display: flex;
+    justify-content: space-between;
     gap: 40px;
     input {
       width: 100%;
     }
   }
 
-  .marginTop {
+  .margin-top {
     margin-top: 16px;
   }
 
@@ -47,9 +49,8 @@ export const InputGroup = styled.div`
     font-weight: bold;
   }
 
-  small {
-    color: ${colors.pureWhire};
-    margin-bottom: 8px;
+  &.cvv-size {
+    max-width: 87px;
   }
 `
 

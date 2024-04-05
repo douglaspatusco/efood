@@ -6,13 +6,14 @@ import Header from '../../components/Header'
 import Cover from '../../components/Cover'
 
 import { useGetMenuQuery } from '../../services/api'
+import Loader from '../../components/Loader'
 
 const Restaurant = () => {
   const { id } = useParams()
   const { data: dishes } = useGetMenuQuery(id!)
 
   if (!dishes) {
-    return <h3>Carregando...</h3>
+    return <Loader />
   }
 
   return (

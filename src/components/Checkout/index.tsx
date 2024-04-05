@@ -157,7 +157,7 @@ const Checkout = () => {
               className={checkInputHasError('city') ? 'error' : ''}
             />
           </S.InputGroup>
-          <div className="spaceBetween">
+          <div className="space-between">
             <S.InputGroup>
               <label htmlFor="zipCode">Cep</label>
               <InputMask
@@ -195,7 +195,7 @@ const Checkout = () => {
               className={checkInputHasError('complement') ? 'error' : ''}
             />
           </S.InputGroup>
-          <div className="marginTop">
+          <div className="margin-top">
             <S.Button
               onClick={goToPayment}
               type="submit"
@@ -229,59 +229,63 @@ const Checkout = () => {
               className={checkInputHasError('cardName') ? 'error' : ''}
             />
           </S.InputGroup>
-          <S.InputGroup>
-            <label htmlFor="cardNumber">Número do cartão</label>
-            <InputMask
-              id="cardNumber"
-              type="text"
-              name="cardNumber"
-              value={form.values.cardNumber}
-              onChange={form.handleChange}
-              onBlur={form.handleBlur}
-              className={checkInputHasError('cardNumber') ? 'error' : ''}
-              mask="9999 9999 9999 9999"
-            />
-          </S.InputGroup>
-          <S.InputGroup>
-            <label htmlFor="cardCode">CVV</label>
-            <InputMask
-              id="cardCode"
-              type="text"
-              name="cardCode"
-              value={form.values.cardCode}
-              onChange={form.handleChange}
-              onBlur={form.handleBlur}
-              className={checkInputHasError('cardCode') ? 'error' : ''}
-              mask="999"
-            />
-          </S.InputGroup>
-          <S.InputGroup>
-            <label htmlFor="mes">Mês de expiração</label>
-            <InputMask
-              id="expiresMonth"
-              type="text"
-              name="expiresMonth"
-              value={form.values.expiresMonth}
-              onChange={form.handleChange}
-              onBlur={form.handleBlur}
-              className={checkInputHasError('expiresMonth') ? 'error' : ''}
-              mask="99"
-            />
-          </S.InputGroup>
-          <S.InputGroup>
-            <label htmlFor="expiresYear">Ano de expiração</label>
-            <InputMask
-              id="expiresYear"
-              type="text"
-              name="expiresYear"
-              value={form.values.expiresYear}
-              onChange={form.handleChange}
-              onBlur={form.handleBlur}
-              className={checkInputHasError('expiresYear') ? 'error' : ''}
-              mask="99"
-            />
-          </S.InputGroup>
-          <div className="marginTop">
+          <div className="space-between">
+            <S.InputGroup>
+              <label htmlFor="cardNumber">Número do cartão</label>
+              <InputMask
+                id="cardNumber"
+                type="text"
+                name="cardNumber"
+                value={form.values.cardNumber}
+                onChange={form.handleChange}
+                onBlur={form.handleBlur}
+                className={checkInputHasError('cardNumber') ? 'error' : ''}
+                mask="9999 9999 9999 9999"
+              />
+            </S.InputGroup>
+            <S.InputGroup className="cvv-size">
+              <label htmlFor="cardCode">CVV</label>
+              <InputMask
+                id="cardCode"
+                type="text"
+                name="cardCode"
+                value={form.values.cardCode}
+                onChange={form.handleChange}
+                onBlur={form.handleBlur}
+                className={checkInputHasError('cardCode') ? 'error' : ''}
+                mask="999"
+              />
+            </S.InputGroup>
+          </div>
+          <div className="space-between">
+            <S.InputGroup>
+              <label htmlFor="mes">Mês de expiração</label>
+              <InputMask
+                id="expiresMonth"
+                type="text"
+                name="expiresMonth"
+                value={form.values.expiresMonth}
+                onChange={form.handleChange}
+                onBlur={form.handleBlur}
+                className={checkInputHasError('expiresMonth') ? 'error' : ''}
+                mask="99"
+              />
+            </S.InputGroup>
+            <S.InputGroup>
+              <label htmlFor="expiresYear">Ano de expiração</label>
+              <InputMask
+                id="expiresYear"
+                type="text"
+                name="expiresYear"
+                value={form.values.expiresYear}
+                onChange={form.handleChange}
+                onBlur={form.handleBlur}
+                className={checkInputHasError('expiresYear') ? 'error' : ''}
+                mask="99"
+              />
+            </S.InputGroup>
+          </div>
+          <div className="margin-top">
             <S.Button
               onClick={() => form.handleSubmit}
               type="submit"
@@ -303,20 +307,20 @@ const Checkout = () => {
             Estamos felizes em informar que seu pedido já está em processo de
             preparação e, em breve, será entregue no endereço fornecido.
           </p>
-          <p className="marginTop">
+          <p className="margin-top">
             Gostaríamos de ressaltar que nossos entregadores não estão
             autorizados a realizar cobranças extras.
           </p>
-          <p className="marginTop">
+          <p className="margin-top">
             Lembre-se da importância de higienizar as mãos após o recebimento do
             pedido, garantindo assim sua segurança e bem-estar durante a
             refeição.
           </p>
-          <p className="marginTop">
+          <p className="margin-top">
             Esperamos que desfrute de uma deliciosa e agradável experiência
             gastronômica. Bom apetite!
           </p>
-          <S.Button className="marginTop" onClick={() => location.reload()}>
+          <S.Button className="margin-top" onClick={() => location.reload()}>
             Concluir
           </S.Button>
         </>
