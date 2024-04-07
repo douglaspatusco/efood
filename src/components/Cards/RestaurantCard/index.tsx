@@ -19,7 +19,10 @@ const RestaurantCard = ({ restaurant }: Props) => {
 
   return (
     <S.CardContainer>
-      <S.RestaurantImage style={{ backgroundImage: `url(${capa})` }}>
+      <S.RestaurantImage
+        title={titulo}
+        style={{ backgroundImage: `url(${capa})` }}
+      >
         <S.TagsContainer>
           {destacado === true ? (
             <S.Tag destacado={destacado}>Destaque da Semana</S.Tag>
@@ -30,7 +33,7 @@ const RestaurantCard = ({ restaurant }: Props) => {
       <S.CardInfo>
         <S.CardHeader>
           <S.Title>{titulo}</S.Title>
-          <S.Rate>
+          <S.Rate title="Nota do restaurante">
             <S.Title>{avaliacao}</S.Title>
             <S.Star />
           </S.Rate>

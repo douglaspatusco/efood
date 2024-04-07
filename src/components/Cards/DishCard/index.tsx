@@ -45,7 +45,7 @@ const DishCard = ({ dish }: Props) => {
         <S.Name>{dish.nome}</S.Name>
         <S.Description>{getDescricao(dish.descricao)}</S.Description>
         <S.AddButton
-          title={`Clique aqui para adicionar o prato ${dish.nome} ao carrinho`}
+          title={`Clique aqui para adicionar ${dish.nome} ao carrinho`}
           onClick={() => setModal({ isVisible: true })}
         >
           Adicionar ao carrinho
