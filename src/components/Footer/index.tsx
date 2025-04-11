@@ -19,6 +19,15 @@ const Footer = () => (
       responsabilidade pela entrega, qualidade dos produtos é toda do
       estabelecimento contratado.{' '}
     </S.Span>
+    <S.Span>
+      <a
+        href="https://www.github.com/douglaspatusco"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Desenvolvido por Douglas Eduardo
+      </a>
+    </S.Span>
   </S.FooterContainer>
 )
 

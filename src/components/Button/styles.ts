@@ -11,4 +11,9 @@ export const ButtonLink = styled(Link)`
   text-decoration: none;
   background-color: ${colors.salmon};
   color: ${colors.antiqueWhite};
+  border-radius: 2px;
+
+  &:hover {
+    background-color: ${colors.salmonLight};
+  }
 `

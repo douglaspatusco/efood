@@ -64,12 +64,14 @@ export const CartItem = styled.div`
   margin: 16px 0;
   display: flex;
   position: relative;
+  border-radius: 2px;
 
   img {
     width: 80px;
     height: 80px;
     object-fit: cover;
     margin-right: 8px;
+    border-radius: 2px;
   }
 
   h3 {
@@ -111,4 +113,9 @@ export const PaymentButton = styled.button`
   width: 100%;
   cursor: pointer;
   margin-bottom: 8px;
+  border-radius: 2px;
+
+  &:hover {
+    background-color: ${colors.white};
+  }
 `

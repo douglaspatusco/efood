@@ -6,10 +6,11 @@ export const breakpoints = {
 }
 
 export const colors = {
-  salmon: '#E66767',
   pureWhire: '#fff',
   white: '#FFF8F2',
   antiqueWhite: '#FFEBD9',
+  salmonLight: '#e48282',
+  salmon: '#E66767',
   salmaoOpaco: '#E667670D'
 }
 

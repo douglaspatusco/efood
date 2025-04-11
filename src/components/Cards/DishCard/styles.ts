@@ -11,6 +11,7 @@ export const CardContainer = styled.section`
   flex-direction: column;
   background-color: ${colors.salmon};
   color: ${colors.antiqueWhite};
+  border-radius: 2px;
 
   position: relative;
 
@@ -26,6 +27,7 @@ export const Image = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   height: 168px;
+  border-radius: 2px;
 `
 
 export const Name = styled.h3`
@@ -47,6 +49,11 @@ export const AddButton = styled.div`
   background-color: ${colors.antiqueWhite};
   color: ${colors.salmon};
   cursor: pointer;
+  border-radius: 2px;
+
+  &:hover {
+    background-color: ${colors.white};
+  }
 `
 
 export const Modal = styled.div`
@@ -80,6 +87,7 @@ export const ModalContent = styled.div`
   z-index: 1;
   color: ${colors.white};
   background-color: ${colors.salmon};
+  border-radius: 2px;
 
   header {
     display: flex;
@@ -100,6 +108,7 @@ export const ModalContent = styled.div`
       width: 280px;
       object-fit: cover;
       margin-right: 24px;
+      border-radius: 2px;
     }
 
     h3 {
@@ -126,6 +135,11 @@ export const ModalContent = styled.div`
       color: ${colors.salmon};
       font-weight: bold;
       cursor: pointer;
+      border-radius: 2px;
+
+      &:hover {
+        background-color: ${colors.white};
+      }
     }
 
     @media (max-width: ${breakpoints.tablet}) {

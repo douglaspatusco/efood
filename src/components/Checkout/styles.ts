@@ -3,6 +3,7 @@ import { colors } from '../../styles'
 
 export const Container = styled.form`
   margin-top: 32px;
+
   h3 {
     color: ${colors.antiqueWhite};
     margin-bottom: 16px;
@@ -13,6 +14,7 @@ export const Container = styled.form`
     display: flex;
     justify-content: space-between;
     gap: 40px;
+
     input {
       width: 100%;
     }
@@ -27,6 +29,7 @@ export const Container = styled.form`
     padding: 8px;
     margin: 8px 0;
     border: 1px solid ${colors.antiqueWhite};
+    border-radius: 2px;
     background-color: ${colors.antiqueWhite};
 
     &.error {
@@ -64,4 +67,5 @@ export const Button = styled.button`
   width: 100%;
   cursor: pointer;
   margin-bottom: 8px;
+  border-radius: 2px;
 `
